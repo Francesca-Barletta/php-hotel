@@ -43,15 +43,26 @@ $hotels = [
     ],
 
 ];
-foreach($hotels as $hotel){
-    foreach($hotel as $key => $value){
-        echo '<br>';
-        // echo $value;
-        var_dump("$key, $value");
-    };
-    
+// foreach($hotels as $hotel){
+//     foreach($hotel as $key => $value){
+//         echo '<br>';
+//         // echo $value;
+//         var_dump("$key, $value");
+//     };
+// }
+// for($i = 0; $i < count($hotels); $i++){
+//     $hotel = $hotels[$i];
+   
+//     $name = $hotel['name'];
+//     $description = $hotel['description'];
+//     $parking = $hotel['parking'];
+//     $vote = $hotel['vote'];
+//     $distance_to_center = $hotel['distance_to_center'];
+//     var_dump($description);
+//     echo '<br>';
+//     // var_dump($name, $description, $parking, $vote, $distance_to_center);
+// }
 
-}
 
 ?>
 <!DOCTYPE html>
@@ -59,9 +70,64 @@ foreach($hotels as $hotel){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    
+    <h1>PHP Hotel</h1>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">Info:</th>
+    <?php for($i = 0; $i < count($hotels); $i++){
+    $hotel = $hotels[$i];
+     ?> <th scope="col"><?php echo $hotel['name'];
+    };?>
+ 
+      </th>
+      <!-- <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Description</th>
+      <?php for($i = 0; $i < count($hotels); $i++){
+    $hotel = $hotels[$i];
+     ?> <td scope="col"><?php echo $hotel['description'];
+    };?>
+ 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Parking</th>
+      <?php for($i = 0; $i < count($hotels); $i++){
+    $hotel = $hotels[$i];
+     ?> <td scope="col"><?php echo $hotel['parking'];
+    };?>
+ 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Vote</th>
+      <?php for($i = 0; $i < count($hotels); $i++){
+    $hotel = $hotels[$i];
+     ?> <td scope="col"><?php echo $hotel['vote'];
+    };?>
+ 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Distance to center</th>
+      <?php for($i = 0; $i < count($hotels); $i++){
+    $hotel = $hotels[$i];
+     ?> <td scope="col"><?php echo $hotel['distance_to_center'];
+    };?>
+ 
+      </td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
