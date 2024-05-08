@@ -78,56 +78,36 @@ $hotels = [
     <table class="table table-hover">
   <thead>
     <tr>
-        <th scope="col">Info:</th>
-    <?php for($i = 0; $i < count($hotels); $i++){
-    $hotel = $hotels[$i];
-     ?> <th scope="col"><?php echo $hotel['name'];
-    };?>
- 
-      </th>
-      <!-- <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th> -->
+        <th scope="col">Name:</th>
+        <th scope="col">Description:</th>
+        <th scope="col">Parcking:</th>
+        <th scope="col">Vote:</th>
+        <th scope="col">Distance to center:</th>
     </tr>
   </thead>
   <tbody>
+    <?php
+
+    foreach($hotels as $hotel){?>
+
     <tr>
-      <th scope="row">Description</th>
-      <?php for($i = 0; $i < count($hotels); $i++){
-    $hotel = $hotels[$i];
-     ?> <td scope="col"><?php echo $hotel['description'];
-    };?>
- 
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Parking</th>
-      <?php for($i = 0; $i < count($hotels); $i++){
-    $hotel = $hotels[$i];
-     ?> <td scope="col"><?php echo $hotel['parking'];
-    };?>
- 
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Vote</th>
-      <?php for($i = 0; $i < count($hotels); $i++){
-    $hotel = $hotels[$i];
-     ?> <td scope="col"><?php echo $hotel['vote'];
-    };?>
- 
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Distance to center</th>
-      <?php for($i = 0; $i < count($hotels); $i++){
-    $hotel = $hotels[$i];
-     ?> <td scope="col"><?php echo $hotel['distance_to_center'];
-    };?>
- 
-      </td>
+      <td><?= $hotel['name']; ?></td>
+      <td><?= $hotel['description']; ?></td>
+      <td><?= $hotel['parking']; ?></td>
+      <td><?= $hotel['vote']; ?></td>
+      <td><?= $hotel['distance_to_center']; ?></td>
+    <?php
+    }
+    ?>
     </tr>
   </tbody>
 </table>
 </body>
 </html>
+<style>
+.table{
+  width:80%;
+  border:1px solid grey;
+}
+
+</style>
